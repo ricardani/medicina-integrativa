@@ -3,6 +3,7 @@ module.exports = {
     title: `Medicina Integrativa`,
     siteUrl: `https://www.yourdomain.tld`,
   },
+  pathPrefix: "/medicina-integrativa",
   plugins: [
     "gatsby-plugin-sass",
     "gatsby-plugin-image",
