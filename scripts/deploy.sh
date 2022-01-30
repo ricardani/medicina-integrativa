@@ -15,10 +15,13 @@ git config user.email "${GITHUB_ACTOR}@bots.github.com"
 
 git fetch
 git checkout "$target_branch"
+
+npm ci
+npm run clean
+
 git pull
 git merge "${remote_name}/${main_branch}" --allow-unrelated-histories --strategy-option theirs
 
-npm ci
 npm run build
 git add "$build_dir" -f
 
