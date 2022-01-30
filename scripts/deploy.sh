@@ -7,6 +7,7 @@ remote_name="origin"
 main_branch="master"
 target_branch="gh-pages"
 build_dir="public"
+build_publish_dir="docs"
 
 cd "$GITHUB_WORKSPACE"
 
@@ -18,12 +19,14 @@ git checkout "$target_branch"
 
 npm ci
 npm run clean
+rm -rf ./$build_publish_dir
 
 git pull
 git merge "${remote_name}/${main_branch}" --allow-unrelated-histories --strategy-option theirs
 
 npm run build
-git add "$build_dir" -f
+mv ./$build_dir ./$build_publish_dir
+git add "$build_publish_dir" -f
 
 git commit -m "updated GitHub Pages"
 if [ $? -ne 0 ]; then
