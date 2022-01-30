@@ -23,7 +23,11 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Build application
+        run: npm run build
+
       - name: Deploy application
-        run: npx gatsby@4.6.0 build --prefix-paths && npx gh-pages@3.2.3 -d public -r https://${{ secrets.GH_TOKEN }}@github.com/ricardani/medicina-integrativa.git
+        run: ./scripts/deploy.sh
         env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.github_token }}
+          DEPLOY_TOKEN: ${{ secrets.GH_TOKEN }}
