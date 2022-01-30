@@ -5,7 +5,7 @@ import Portfolio from "../components/portfolio/Portfolio.jsx";
 import About from "../components/about/About.jsx";
 import Footer from "../components/footer/Footer.jsx";
 
-import "./css/styles.css";
+import "./css/styles.scss";
 import "../styles/global.scss";
 
 const IndexPage = () => {
