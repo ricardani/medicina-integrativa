@@ -24,6 +24,6 @@ jobs:
         run: npm ci
 
       - name: Deploy application
-        run: npm run deploy
+        run: gatsby build --prefix-paths && gh-pages -d public -r https://$GH_TOKEN@github.com/ricardani/medicina-integrativa.git
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
