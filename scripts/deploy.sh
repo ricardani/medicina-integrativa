@@ -15,7 +15,7 @@ git config user.email "${GITHUB_ACTOR}@bots.github.com"
 
 git fetch
 git checkout "$target_branch"
-git merge "${remote_name}/${main_branch}"
+git rebase "${remote_name}/${main_branch}"
 
 npm ci
 npm run build
