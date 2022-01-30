@@ -1,0 +1,27 @@
+@import './colors.scss';
+
+.header-container {
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+    background-color: $brand-color;
+
+    .header-container__logo {
+        width: 25rem;
+    }
+}
+
+.portfolio-container {
+    .portfolio-item .portfolio-item-caption:hover {
+        background-color: $brand-color;
+    }
+}
+
+.about-container {
+    background-color: $brand-color;
+}
+
+.navigation-container {
+    .navigation-container__menu_button { 
+        background-color: $brand-color;
+    }
+}

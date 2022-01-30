@@ -1,0 +1,26 @@
+{
+    "extends": [
+        "airbnb/hooks",
+        "plugin:prettier/recommended",
+        "plugin:import/recommended"
+    ],
+    "plugins": ["react"],
+    "env": {
+        "browser": true,
+        "es6": true,
+    },
+    "globals": { },
+    "rules": {
+        "import/extensions": "off",
+        "import/no-extraneous-dependencies": "off",
+        "linebreak-style": "off",
+        "react/react-in-jsx-scope": "off",
+        "prettier/prettier": [
+            "error",
+            {
+                "endOfLine": "auto"
+            }
+        ],
+        "import/order": ["error", { "groups": ["external", "builtin", "internal", "sibling", "parent", "index"] } ]
+    }
+}
