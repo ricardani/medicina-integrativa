@@ -16,11 +16,11 @@ git config user.email "${GITHUB_ACTOR}@bots.github.com"
 git fetch
 git checkout "$target_branch"
 git pull
-git merge "${remote_name}/${main_branch}" --allow-unrelated-histories
+git merge "${remote_name}/${main_branch}" --allow-unrelated-histories --strategy-option theirs
 
 npm ci
 npm run build
-git add "$build_dir"
+git add "$build_dir" -f
 
 git commit -m "updated GitHub Pages"
 if [ $? -ne 0 ]; then
